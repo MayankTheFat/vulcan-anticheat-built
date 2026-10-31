@@ -1,0 +1,63 @@
+name: VulcanAntiCheatBuilt
+version: 1.0.0
+main: com.mayankpatil.anticheat.VulcanAntiCheat
+api-version: '1.21'
+description: A custom-built Minecraft anti-cheat plugin with core detection features
+author: MayankPatil3
+website: https://github.com/MayankPatil3
+
+# Permissions
+permissions:
+  vulcan.admin:
+    description: Full access to all Vulcan commands
+    default: op
+  vulcan.alerts:
+    description: Receive cheat detection alerts
+    default: op
+  vulcan.reload:
+    description: Reload plugin configuration
+    default: op
+  vulcan.violations:
+    description: Check player violation counts
+    default: op
+  vulcan.reset:
+    description: Reset player violations
+    default: op
+  vulcan.debug:
+    description: Access debug commands
+    default: op
+  vulcan.bypass:
+    description: Bypass anti-cheat checks
+    default: op
+  vulcan.bypass.all:
+    description: Bypass all anti-cheat checks
+    default: false
+  vulcan.bypass.fly:
+    description: Bypass fly detection
+    default: false
+  vulcan.bypass.speed:
+    description: Bypass speed detection
+    default: false
+  vulcan.bypass.killaura:
+    description: Bypass KillAura detection
+    default: false
+  vulcan.bypass.reach:
+    description: Bypass reach detection
+    default: false
+  vulcan.bypass.autoclick:
+    description: Bypass autoclicker detection
+    default: false
+  vulcan.bypass.nofall:
+    description: Bypass NoFall detection
+    default: false
+  vulcan.bypass.punishment:
+    description: Bypass punishments
+    default: false
+
+# Commands
+commands:
+  vulcan:
+    description: Main Vulcan AntiCheat command
+    usage: /<command> [help|reload|alerts|bypass|violations|reset|info|debug]
+    aliases: [vac, anticheat]
+    permission: vulcan.admin

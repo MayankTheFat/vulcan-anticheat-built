@@ -1,0 +1,94 @@
+# Vulcan AntiCheat Configuration
+# Built from scratch by MayankPatil3
+
+# Detection Settings
+detection:
+  enabled-checks:
+    - "fly"
+    - "speed"
+    - "killaura"
+    - "reach"
+    - "autoclick"
+    - "nofall"
+  
+  # Speed detection thresholds
+  max-horizontal-speed: 5.0  # blocks per second
+  max-vertical-speed: 1.2    # blocks per second
+  max-air-ticks: 20          # ticks (1 second)
+  
+  # Combat detection thresholds
+  max-attacks-per-second: 15 # clicks per second
+  max-reach-distance: 4.5    # blocks
+  max-angle-change: 90.0     # degrees per second
+  
+  # General settings
+  violation-threshold: 5     # violations before flagging
+  check-interval: 20         # ticks between checks (1 second)
+  reset-interval: 60000      # milliseconds between violation resets (1 minute)
+
+# Alert Settings
+alerts:
+  enabled: true
+  broadcast: false           # Broadcast alerts to all players
+  console: true             # Send alerts to console
+  ops-receive: true         # OPs receive alerts by default
+  
+  prefix: "&8[&cVulcan&8]"
+  format: "{player} &7failed &c{check}&7: &f{details} &8(&c{vl}&8)"
+  
+  # UUIDs of players who should receive alerts
+  receivers: []
+  # Example: 
+  # - "uuid1-here"
+  # - "uuid2-here"
+
+# Punishment Settings
+punishments:
+  enabled: true
+  
+  # Kick settings
+  kick:
+    enabled: true
+    threshold: 10            # violations before kick
+    message: "&cYou have been kicked for cheating."
+  
+  # Ban settings
+  ban:
+    enabled: false           # Disabled by default
+    threshold: 20            # violations before ban
+    message: "&cYou have been banned for cheating."
+  
+  # Warning settings
+  warn:
+    enabled: true
+    threshold: 5             # violations before warning
+    message: "&cWarning: Cheating violations detected!"
+  
+  # Setback settings
+  setback:
+    enabled: true            # Teleport player back when cheating
+
+# Performance Settings
+performance:
+  max-players-tracked: 100
+  cleanup-interval: 300      # ticks between cleanup (15 seconds)
+  cache-size: 1000
+
+# Debug Settings
+debug:
+  enabled: false
+  log-detections: false
+  log-movement: false
+  log-combat: false
+
+# Update Settings
+update:
+  check-for-updates: true
+  notify-on-join: true
+  download-url: "https://github.com/MayankPatil3/vulcan-anticheat-built"
+
+# Metrics Settings
+metrics:
+  enabled: true
+  server-id: "anonymous"
+  collect-anonymous-stats: true
